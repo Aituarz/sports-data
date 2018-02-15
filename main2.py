@@ -34,7 +34,8 @@ def league(bot, update):
     update.message.reply_text(
         "Please select league:",
         reply_markup=markup)
-
+  
+    print str(CHOOSING)
     return CHOOSING
 
 
