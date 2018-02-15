@@ -41,10 +41,17 @@ def league(bot, update):
     update.message.reply_text(
         "Please select league:",
         reply_markup=markup)
-  
-    print (update.message.text)
+    
     return CHOOSING
 
+def echo(bot, update):
+  league_ls=apidata.getallleague_ls2()
+  if update.effective_message.text in league_ls:
+    update.effective_message.reply_text(apidata.allcommands(update.effective_message.text))
+  else:
+    update.effective_message.reply_text('hmmm')
+  
+  
 
 def regular_choice(bot, update, user_data):
     text = update.message.text
