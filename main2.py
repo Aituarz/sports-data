@@ -30,7 +30,7 @@ def start(bot, update):
 
 def league(bot, update):
     reply_keyboard = apidata.getallleague_ls()
-    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=True)
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True, resize_keyboard=False)
     update.message.reply_text(
         "Please select league:",
         reply_markup=markup)
