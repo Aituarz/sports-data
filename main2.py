@@ -105,7 +105,6 @@ if __name__ == "__main__":
     dp = updater.dispatcher
     # Add handlers
     conv_handler = ConversationHandler(
-      entry_points=[CommandHandler('start', start)],
       entry_points=[CommandHandler('league', league)],
 
         states={
