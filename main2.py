@@ -81,8 +81,8 @@ def error(bot, update, error):
     
 if __name__ == "__main__":
     # Set these variable to the appropriate values
-    TOKEN = "510800243:AAEsmyadUWf8h6VL4YV0HbjXtvuYVLRNpFQ"
-    NAME = "zhankin-sports-data"
+    TOKEN = "545789772:AAEc1xOQeBejxtdq1msNef7Z-mY5FOOek9Q"
+    NAME = "aituar-sports-data"
 
     # Port is given by Heroku
     PORT = int(os.environ.get('PORT'))
