@@ -7,9 +7,6 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Rege
 
 CHOOSING, TYPING_REPLY, TYPING_CHOICE = range(3)
 
-
-
-
 def facts_to_str(user_data):
     facts = list()
 
@@ -18,10 +15,9 @@ def facts_to_str(user_data):
 
     return "\n".join(facts).join(['\n', '\n'])
 
-
 def start(bot, update):
     update.message.reply_text(
-        "Hi! My name is Doctor Botter. I will hold a more complex conversation with you. "
+        "Hello!"
         "Why don't you tell me something about yourself?",
         reply_markup=markup)
 
@@ -35,7 +31,7 @@ def league(bot, update):
         "Please select league:",
         reply_markup=markup)
   
-    print (CHOOSING)
+    print (update.message.text)
     return CHOOSING
 
 
