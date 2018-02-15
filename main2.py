@@ -35,7 +35,7 @@ def league(bot, update):
         "Please select league:",
         reply_markup=markup)
   
-    print str(CHOOSING)
+    print (CHOOSING)
     return CHOOSING
 
 
