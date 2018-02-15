@@ -1,15 +1,13 @@
 import os
 import logging
+import apidata
 from telegram import ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, RegexHandler,
                           ConversationHandler)
 
 CHOOSING, TYPING_REPLY, TYPING_CHOICE = range(3)
 
-reply_keyboard = [['Age', 'Favourite colour'],
-                  ['Number of siblings', 'Something else...'],
-                  ['Done']]
-markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+
 
 
 def facts_to_str(user_data):
@@ -25,6 +23,16 @@ def start(bot, update):
     update.message.reply_text(
         "Hi! My name is Doctor Botter. I will hold a more complex conversation with you. "
         "Why don't you tell me something about yourself?",
+        reply_markup=markup)
+
+    return CHOOSING
+ 
+
+def league(bot, update):
+    reply_keyboard = apidata.getallleague_ls()
+    markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
+    update.message.reply_text(
+        "Please select league:",
         reply_markup=markup)
 
     return CHOOSING
@@ -98,6 +106,7 @@ if __name__ == "__main__":
     # Add handlers
     conv_handler = ConversationHandler(
         entry_points=[CommandHandler('start', start)],
+        entry_points=[CommandHandler('league', league)],
 
         states={
             CHOOSING: [RegexHandler('^(Age|Favourite colour|Number of siblings)$',
