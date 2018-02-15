@@ -18,11 +18,22 @@ def facts_to_str(user_data):
 def start(bot, update):
     update.message.reply_text(
         "Hello!"
-        "Why don't you tell me something about yourself?",
+        "Please select menu:",
         reply_markup=markup)
 
     return CHOOSING
  
+def main_menu(message):
+  markup = types.ReplyKeyboardMarkup(True, False)
+  button1 = types.KeyBoardButton('Info')
+  button2 = types.KeyBoardButton('Forecast')
+  markup.add(button1, button2)
+  
+def info(info):
+  update.message,reply_text(
+      "ForeCast v.1.0",
+      reply_markup=markup)
+  
 
 def league(bot, update):
     reply_keyboard = apidata.getallleague_ls()
