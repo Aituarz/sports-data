@@ -305,7 +305,9 @@ def getallleague_ls():
 	output=[]
 	for x in response:
 		output.append(x['caption'])
-	return output
+	output2=[]
+	output2.append(output)
+	return output2
 
 def allcomands(need):
 	r=requests.get("http://api.football-data.org/v1/competitions", headers={'X-Auth-Token': key})
